@@ -1,9 +1,10 @@
 class Solution(object):
+    """
     def longestPalindrome(self, s):
-        """
+    
         :type s: str
         :rtype: int
-        """
+        
         d = dict()
         for i in s:
             if d.get(i):
@@ -20,4 +21,9 @@ class Solution(object):
                 if d[i] > 1:
                     res += d[i] - 1
         return res + 1 if flag else res
-
+    """
+    def longestPalindrome(self, s):
+        use = sum(v & ~1 for v in collections.Counter(s).values())
+        return use + (use < len(s))
+            
+            
