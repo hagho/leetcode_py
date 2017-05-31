@@ -7,6 +7,7 @@ class Solution(object):
         d = collections.defaultdict(int)
         for line in wall:
             i = 0
+
             for brick in line[:-1]:
                 i += brick
                 d[i] += 1
